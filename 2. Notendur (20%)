@@ -1,5 +1,6 @@
 Búið til notendahópana (e. user group) Innkaup, Sala, Yfirstjórn og Allir. Allir starfsmenn eiga að vera í einum deildarhóp og síðan í Allir hópnum. - 
 # Define user groups
+# Define user groups
 $Groups = @("Innkaup", "Sala", "Yfirstjórn", "Allir")
 
 # Create hashtable to store groups and members
@@ -23,14 +24,26 @@ Per Stephansen,Per,Stephansen,PerSte,Sala
 "@ | ConvertFrom-Csv
 
 foreach ($User in $UserDetails) {
+    $Password = Read-Host "Enter password for $($User.fornafn) $($User.eftirnafn):"
     $UserObject = [PSCustomObject]@{
         Name = "$($User.fornafn) $($User.eftirnafn)"
         Username = $User.notendanafn
-        Password = "YourPassword"  # Set your desired password here
+        Password = $Password  # Set the password provided by the user
     }
 
     # Add users to appropriate groups
     $UserGroups[$User.hopur].Add($UserObject)
     $UserGroups["Allir"].Add($UserObject)  # Add users to the 'Allir' group
+}
+
+# Display members of each group
+foreach ($GroupKey in $UserGroups.Keys) {
+    Write-Host "Group: $GroupKey"
+    $GroupMembers = $UserGroups[$GroupKey]
+    foreach ($Member in $GroupMembers) {
+        Write-Host "  Member: $($Member.Name) (Username: $($Member.Username))"
+    }
+}
+serObject)  # Add users to the 'Allir' group
 }
 
