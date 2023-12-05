@@ -1,1 +1,28 @@
+1. **Undirbúa USB-stikkið:**
+   - Sækja og notaðu "Windows USB/DVD Download Tool" eða annað tól til að gera USB-stikkið uppsettan með Windows 10. (Ég notaði pendrive frá kennaranum)
+   - Opnaðu tól og fylgdu einföldum skrefum til að velja sýndina og búa til uppsetningu á USB-stikkið.
 
+2. **Stilltu tölvuna á að ræsa af USB-stikki:**
+   - Slökkva á tölvunni og tengja USB-stikkið við tölvuna.
+   - Slá inn BIOS eða UEFI stillingum með því að ýta á ákveðinn hnapp (oftast F2, F10, F12 eða DEL) þegar tölvuræsist.
+   - Breyta röðinni á stöki (Boot Order) svo að USB-stikkið sé fyrst í röðinni.
+
+3. **Byrja uppsetningu:**
+   - Ræsa aftur tölvuna og hún ætti að keyra upp af USB-stikki Windows 10.
+   - Þú munt sjá "Install Now" - smelltu á það.
+
+4. **Veldu uppsetningu:**
+   - Fylgja leiðbeiningum um tungumála, staðsetningu og önnur stillingar.
+   - Þú munt komast að vali um að endurræsa tölvuna, og þá áttu að fylgja leiðbeiningunum.
+
+5. **Slá inn lykilinn:**
+   - Þú munt þurfa að slá inn virkjunarlykilinn sem fylgir Windows 10.
+   - Ef þú ert að endurræsa tölvuna, þá er gott að vera með lykilinn til að geta notað hann aftur. (Ég notaði lykilinn frá github)
+
+6. **Veldu diskinn til að setja upp á:**
+   - Veldu diskinn eða hluta þess sem þú vilt setja Windows 10 á.
+   - Ef þú ert að uppsetja á tóman disk, getur þú valið að gera nýjan hluta.
+
+7. **Bíddu á meðan uppsetningu er í gangi:**
+   - Láttu Windows 10 klára uppsetninguna og endurræsa tölvuna eftir að þú ert búinn að setja upp á.
+   - Fylgdu leiðbeiningum um að stilla notandaeiginleika, tengja við netið og setja upp uppfærslur.
