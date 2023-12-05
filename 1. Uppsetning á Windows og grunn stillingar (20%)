@@ -27,5 +27,8 @@
    - Láttu Windows 10 klára uppsetninguna og endurræsa tölvuna eftir að þú ert búinn að setja upp á.
    - Fylgdu leiðbeiningum um að stilla notandaeiginleika, tengja við netið og setja upp uppfærslur.
 
+8. Passið að velja Setup for organization og Domain join instead þegar það er í boði.
+Eg for I control panel og breytti organization og Domain vegnes thess thad var ekki i bodi i setup og setti nafnid a tolvinni i KEST2VW-Eryk-Sebastian
+
 Eftir að Windows hafði verið sett upp tengdi ég tölvuna við internetið með LAN snúru
 sem ég gerði fyrir nokkrum kennslustundumog sérsniði útlit hennar, t.d. bakgrunn, lit á verkefnastikunni o.s.frv.
