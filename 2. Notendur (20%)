@@ -1,7 +1,6 @@
 Búið til notendahópana (e. user group) Innkaup, Sala, Yfirstjórn og Allir. Allir starfsmenn eiga að vera í einum deildarhóp og síðan í Allir hópnum. -
 
 # Define user groups
-# Define user groups
 $Groups = @("Innkaup", "Sala", "Yfirstjórn", "Allir")
 
 # Create hashtable to store groups and members
