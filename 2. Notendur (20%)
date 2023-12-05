@@ -1,1 +1,36 @@
-2. Notendur (20%)
+Búið til notendahópana (e. user group) Innkaup, Sala, Yfirstjórn og Allir. Allir starfsmenn eiga að vera í einum deildarhóp og síðan í Allir hópnum. - 
+# Define user groups
+$Groups = @("Innkaup", "Sala", "Yfirstjórn", "Allir")
+
+# Create hashtable to store groups and members
+$UserGroups = @{}
+foreach ($Group in $Groups) {
+    $UserGroups[$Group] = New-Object System.Collections.ArrayList
+}
+
+# Read user data from CSV
+$UserDetails = @"
+nafn,fornafn,eftirnafn,notendanafn,hopur
+Guðríður Eiríksdóttir,Guðríður,Eiríksdóttir,GudEir,Yfirstjórn
+Eva Markúsdóttir,Eva,Markúsdóttir,EvaMar,Yfirstjórn
+Ásdís Magnúsdóttir,Ásdís,Magnúsdóttir,AsdMag,Innkaup
+Vilborg Traustadóttir,Vilborg,Traustadóttir,VilTra,Innkaup
+Kristján Björn Snorrason,Kristján,Snorrason,KriSno,Sala
+Baldvin Kr Baldvinsson,Baldvin,Baldvinsson,BalBal,Sala
+Ólafur Þór Leifsson,Ólafur,Leifsson,OlaLei,Sala
+Guðmundur Óskar Bjarnason,Guðmundur,Bjarnason,GudBja,Sala
+Per Stephansen,Per,Stephansen,PerSte,Sala
+"@ | ConvertFrom-Csv
+
+foreach ($User in $UserDetails) {
+    $UserObject = [PSCustomObject]@{
+        Name = "$($User.fornafn) $($User.eftirnafn)"
+        Username = $User.notendanafn
+        Password = "YourPassword"  # Set your desired password here
+    }
+
+    # Add users to appropriate groups
+    $UserGroups[$User.hopur].Add($UserObject)
+    $UserGroups["Allir"].Add($UserObject)  # Add users to the 'Allir' group
+}
+
