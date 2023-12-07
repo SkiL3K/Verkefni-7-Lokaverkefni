@@ -44,6 +44,6 @@ foreach ($GroupKey in $UserGroups.Keys) {
         Write-Host "  Member: $($Member.Name) (Username: $($Member.Username))"
     }
 }
-serObject)  # Add users to the 'Allir' group
+serObject)
 }
 
