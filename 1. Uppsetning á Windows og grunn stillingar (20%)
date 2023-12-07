@@ -1,3 +1,4 @@
+**** Setjið upp nýja Windows 10 uppsetningu á tölvuna. ****
 1. **Undirbúa USB-stikkið:**
    - Sækja og notaðu "Windows USB/DVD Download Tool" eða annað tól til að gera USB-stikkið uppsettan með Windows 10. (Ég notaði pendrive frá kennaranum)
    - Opnaðu tól og fylgdu einföldum skrefum til að velja sýndina og búa til uppsetningu á USB-stikkið.
@@ -7,7 +8,7 @@
    - Slá inn BIOS eða UEFI stillingum með því að ýta á ákveðinn hnapp (oftast F2, F10, F12 eða DEL) þegar tölvuræsist.
    - Breyta röðinni á stöki (Boot Order) svo að USB-stikkið sé fyrst í röðinni.
 
-3. **Byrja uppsetningu:**
+3. **Byrja up psetningu:**
    - Ræsa aftur tölvuna og hún ætti að keyra upp af USB-stikki Windows 10.
    - Þú munt sjá "Install Now" - smelltu á það.
 
@@ -28,7 +29,22 @@
    - Fylgdu leiðbeiningum um að stilla notandaeiginleika, tengja við netið og setja upp uppfærslur.
 
 8. Passið að velja Setup for organization og Domain join instead þegar það er í boði.
+
+9. Eftir að Windows hafði verið sett upp tengdi ég tölvuna við internetið með LAN snúru
+sem ég gerði fyrir nokkrum kennslustundumog sérsniði útlit hennar, t.d. bakgrunn, lit á verkefnastikunni o.s.frv.
+
+
+**** Passið að velja Setup for organization og Domain join instead þegar það er í boði sjá mynd. *****
 Eg for I control panel og breytti organization og Domain vegnes thess thad var ekki i bodi i setup og setti nafnid a tolvinni i KEST2VW-Eryk-Sebastian
 
-Eftir að Windows hafði verið sett upp tengdi ég tölvuna við internetið með LAN snúru
-sem ég gerði fyrir nokkrum kennslustundumog sérsniði útlit hennar, t.d. bakgrunn, lit á verkefnastikunni o.s.frv.
+
+***** Setjið upp Python3 (64 bita) og VS Code (með Python stuðningi). ***** 
+Ég sótti Python frá https://www.python.org/downloads/.
+
+***** Setjið upp Git á tölvuna. *****
+Ég sótti Git frá https://git-scm.com/downloads.
+
+
+
+
+
