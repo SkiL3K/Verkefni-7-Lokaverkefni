@@ -2,7 +2,7 @@
 Búið svo möppurnar fyrir hópana til í möppunni Gögn og stillið svo réttindin á möppunum. Búið til textaskrá í hverri möppu sem heitir eftir nafninu á möppunni. *****
 
 # Möppu slóðir
-$rootFolderPath = "C:\Gögn"
+$rootFolderPath = "C:\Users\Kocham Cycuszki\Desktop\New folder\moppur\Gögn"
 $sharedFolderName = "Sameign"
 
 # Búa til möppu fyrir Sameign sem allir hafa aðgang að
