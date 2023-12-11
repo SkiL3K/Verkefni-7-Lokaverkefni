@@ -1,0 +1,17 @@
+***** Breyttu lykilorðareglunni þannnig að: Lágmarkslengd lykilorða verður 8 stafir. Einföld lykilorð eru ekki heimil. ****
+
+# Setja lágmarkslengd lykilorða á 8 stafi
+$minLength = 8
+Set-LocalUser -Name * -PasswordMinimumLength $minLength
+
+# Sleppa einföldum lykilorðum
+Set-LocalUser -Name * -PasswordComplexity Enabled
+
+**** Eldveggur: Lokað fyrir alla innkomandi netumferð nema ping. *****
+
+# Búa til reglu sem leyfir ping
+$ruleName = "AllowPing"
+$rule = New-NetFirewallRule -DisplayName $ruleName -Direction Inbound -Protocol ICMPv4 -Action Allow -Enabled True
+
+# Setja reglu á eldvegginn
+Set-NetFirewallRule -DisplayName $ruleName -Profile Any -RemoteAddress Any -LocalAddress Any
