@@ -1,5 +1,36 @@
 **** Hver hópur þarf að eiga sér sína eigin möppu sem eingöngu þeir sem eru í þeim hóp hafa aðgang að. Síðan þarf að vera til mappan Sameign sem allir notendurnir hafa aðgang að. Búðu til möppuna Gögn á rót C drifsins. 
 Búið svo möppurnar fyrir hópana til í möppunni Gögn og stillið svo réttindin á möppunum. Búið til textaskrá í hverri möppu sem heitir eftir nafninu á möppunni. *****
 
+# Möppu slóðir
+$rootFolderPath = "C:\Gögn"
+$sharedFolderName = "Sameign"
+
+# Búa til möppu fyrir Sameign sem allir hafa aðgang að
+New-Item -Path $rootFolderPath -Name $sharedFolderName -ItemType "directory"
+$acl = Get-Acl -Path $rootFolderPath\$sharedFolderName
+$acl.SetAccessRuleProtection($true, $false)
+$acl | Set-Acl -Path $rootFolderPath\$sharedFolderName
+
+# Möppur fyrir hópana og textaskrár
+$groups = "Innkaup", "Sala", "Yfirstjórn", "Allir"
+
+foreach ($group in $groups) {
+    # Búa til möppu fyrir hóp
+    $groupFolderPath = Join-Path -Path $rootFolderPath -ChildPath $group
+    New-Item -Path $groupFolderPath -ItemType "directory"
+
+    # Setja réttindi á möppu fyrir hópinn
+    $aclGroup = Get-Acl -Path $groupFolderPath
+    $rule = New-Object System.Security.AccessControl.FileSystemAccessRule("BUILTIN\$group", "Modify", "ContainerInherit, ObjectInherit", "None", "Allow")
+    $aclGroup.AddAccessRule($rule)
+    $aclGroup | Set-Acl -Path $groupFolderPath
+
+    # Búa til textaskrá í hverri möppu
+    $textFileName = $group + ".txt"
+    $textFilePath = Join-Path -Path $groupFolderPath -ChildPath $textFileName
+    New-Item -Path $textFilePath -ItemType "file"
+}
+
+
 
 
