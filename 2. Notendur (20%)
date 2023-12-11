@@ -1,47 +1,41 @@
 Búið til notendahópana (e. user group) Innkaup, Sala, Yfirstjórn og Allir. Allir starfsmenn eiga að vera í einum deildarhóp og síðan í Allir hópnum. -
 
-# Define user groups
-$Groups = @("Innkaup", "Sala", "Yfirstjórn", "Allir")
+# Stígur að CSV skránni
+$csvPath = $csvPath = "C:\Users\Kocham Cycuszki\Desktop\New folder\users\user_data.csv"
 
-# Create hashtable to store groups and members
-$UserGroups = @{}
-foreach ($Group in $Groups) {
-    $UserGroups[$Group] = New-Object System.Collections.ArrayList
+# Lesa gögn úr CSV skrá
+$userData = Import-Csv -Path $csvPath
+
+# Búa til hópa ef þeir eru ekki til
+$groups = "Innkaup", "Sala", "Yfirstjórn", "Allir"
+
+foreach ($group in $groups) {
+    if (-not (Get-LocalGroup -Name $group -ErrorAction SilentlyContinue)) {
+        New-LocalGroup -Name $group
+    }
 }
 
-# Read user data from CSV
-$UserDetails = @"
-nafn,fornafn,eftirnafn,notendanafn,hopur
-Guðríður Eiríksdóttir,Guðríður,Eiríksdóttir,GudEir,Yfirstjórn
-Eva Markúsdóttir,Eva,Markúsdóttir,EvaMar,Yfirstjórn
-Ásdís Magnúsdóttir,Ásdís,Magnúsdóttir,AsdMag,Innkaup
-Vilborg Traustadóttir,Vilborg,Traustadóttir,VilTra,Innkaup
-Kristján Björn Snorrason,Kristján,Snorrason,KriSno,Sala
-Baldvin Kr Baldvinsson,Baldvin,Baldvinsson,BalBal,Sala
-Ólafur Þór Leifsson,Ólafur,Leifsson,OlaLei,Sala
-Guðmundur Óskar Bjarnason,Guðmundur,Bjarnason,GudBja,Sala
-Per Stephansen,Per,Stephansen,PerSte,Sala
-"@ | ConvertFrom-Csv
+# Loopa í gegnum gögnin og búa til notendur
+foreach ($user in $userData) {
+    $username = $user.Username
+    $password = ConvertTo-SecureString -String $user.Password -AsPlainText -Force
+    $userFullName = $user.FullName
 
-foreach ($User in $UserDetails) {
-    $Password = Read-Host "Enter password for $($User.fornafn) $($User.eftirnafn):"
-    $UserObject = [PSCustomObject]@{
-        Name = "$($User.fornafn) $($User.eftirnafn)"
-        Username = $User.notendanafn
-        Password = $Password  # Set the password provided by the user
-    }
+    # Búa til notanda
+    New-LocalUser -Name $username -Password $password -FullName $userFullName -Description "New user account" -PasswordNeverExpires $true
 
-    # Add users to appropriate groups
-    $UserGroups[$User.hopur].Add($UserObject)
-    $UserGroups["Allir"].Add($UserObject)  # Add users to the 'Allir' group
+    # Setja notanda í hópa
+    Add-LocalGroupMember -Group "Innkaup" -Member $username
+    Add-LocalGroupMember -Group "Sala" -Member $username
+    Add-LocalGroupMember -Group "Yfirstjórn" -Member $username
+    Add-LocalGroupMember -Group "Allir" -Member $username
 }
 
-# Display members of each group
-foreach ($GroupKey in $UserGroups.Keys) {
-    Write-Host "Group: $GroupKey"
-    $GroupMembers = $UserGroups[$GroupKey]
-    foreach ($Member in $GroupMembers) {
-        Write-Host "  Member: $($Member.Name) (Username: $($Member.Username))"
-    }
+# Stilla réttindi til að leyfa notendum að skrá sig inn
+$groupAll = "Allir"
+$allUsers = Get-LocalUser
+
+foreach ($user in $allUsers) {
+    Add-LocalGroupMember -Group $groupAll -Member $user.Name
 }
 
