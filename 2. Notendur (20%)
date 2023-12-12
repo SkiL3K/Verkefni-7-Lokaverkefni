@@ -1,4 +1,4 @@
-Fyrst bjó ég til users.csv skrá þar sem ég límdi eftirfarandi upplýsingar inn:
+***** Fyrst bjó ég til users.csv skrá þar sem ég límdi eftirfarandi upplýsingar inn:
 
 nafn,fornafn,eftirnafn,notendanafn,hopur
 Guðríður Eiríksdóttir,Guðríður,Eiríksdóttir,GudEir,Yfirstjórn
@@ -10,6 +10,9 @@ Baldvin Kr Baldvinsson,Baldvin,Baldvinsson,BalBal,Sala
 Ólafur Þór Leifsson,Ólafur,Leifsson,OlaLei,Sala
 Guðmundur Óskar Bjarnason,Guðmundur,Bjarnason,GudBja,Sala
 Per Stephansen,Per,Stephansen,PerSte,Sala
+
+
+***** Svo skrifaði ég kóðann og notaði tenglana frá lið 2 og internetið til að hjálpa *****
 
 # Lesa notendur úr CSV-skjali
 $notendur = Import-Csv -Path "C:\Users\KEST2VW-SebastianLukasz\notendur.csv"
