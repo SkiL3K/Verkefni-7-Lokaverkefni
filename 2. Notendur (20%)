@@ -38,8 +38,9 @@ foreach ($notandi in $notendur) {
     $nyrNotandi = New-LocalUser @notandiGogn
 
     # Setja aðgangsorð á notanda
-    $lykilord = ConvertTo-SecureString -String "OryggiLykilord123!" -AsPlainText -Force
-    $nyrNotandi | Set-LocalUser -Password $lykilord
+    $password = Read-Host "Sláðu inn lykilorð fyrir notanda $($user.notendanafn)"
+    $securePassword = ConvertTo-SecureString -String $password -AsPlainText -Force
+    $newUser | Set-LocalUser -Password $securePassword
 
     # Bæta notanda í sinn hóp
     Add-LocalGroupMember -Group $notandi.hopur -Member $notandi.notendanafn
