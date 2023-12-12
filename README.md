@@ -11,6 +11,8 @@ Hlekkur á alla lýsinguna á því hvernig ég gerði lið 1 =>>   https://gith
 https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-csv?view=powershell-7.4&viewFallbackFrom=powershell-7 og
 https://github.com/gestskoli/KEST2VW/blob/master/PowerShell/UmPowerShell.md#lesa-%C3%BAr-csv-skr%C3%A1
 
+Hlekkur á lýsingu á öllu lið 2 =>> https://github.com/SkiL3K/Verkefni-7-Lokaverkefni/blob/main/2.%20Notendur%20(20%25)
+
 # ------------------------------------------------------------------------------
 
 # 3. Skrár, möppur og réttindi (20%) 07/12/2023 
