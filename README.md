@@ -21,7 +21,7 @@ Hlekkur á lýsingu á öllu lið 3 =>> https://github.com/SkiL3K/Verkefni-7-Lok
 
 # ------------------------------------------------------------------------------
 
-# 4. Öryggismál (10%) 07/12/2023
+# 4. Öryggismál (10%) 11/12/2023
 
 Hlekkur á lýsingu á öllu lið 4 =>> https://github.com/SkiL3K/Verkefni-7-Lokaverkefni/blob/main/4.%20%C3%96ryggism%C3%A1l%20(10%25)
 
