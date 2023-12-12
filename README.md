@@ -2,8 +2,15 @@
 
 # Dagbók
 
-# 1. Uppsetning á Windows og grunn stillingar (20%) 05/12/2023 Ég setti upp Windows aftur, breytti tölvuheitinu í KEST2VW-SebastianLukasz, setti upp GIT, python3, VScode og önnur nauðsynleg forrit
+# 1. Uppsetning á Windows og grunn stillingar (20%) 05/12/2023 Ég setti upp Windows aftur, breytti tölvuheitinu í KEST2VW-SebastianLukasz, setti upp GIT, python3, VScode og önnur nauðsynleg 
+
+![visual-studio-code-logo](https://github.com/SkiL3K/Verkefni-7-Lokaverkefni/assets/114151905/7868afd7-21be-40de-a646-e2034f17621f) ![python-logo-C50EED1930-seeklogo com](https://github.com/SkiL3K/Verkefni-7-Lokaverkefni/assets/114151905/57fbb051-4c73-46bb-8608-dec8962f1bfd) ![GitHub-logo](https://github.com/SkiL3K/Verkefni-7-Lokaverkefni/assets/114151905/5ca8bb56-33ab-46bf-b59a-d417e00a074b)
+
+
 Hlekkur á alla lýsinguna á því hvernig ég gerði lið 1 =>>   https://github.com/SkiL3K/Verkefni-7-Lokaverkefni/blob/main/1.%20Uppsetning%20%C3%A1%20Windows%20og%20grunn%20stillingar%20(20%25)
+
+
+
 
 # ------------------------------------------------------------------------------
 
