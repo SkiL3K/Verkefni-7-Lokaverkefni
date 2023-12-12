@@ -7,7 +7,7 @@ Hlekkur á alla lýsinguna á því hvernig ég gerði lið 1 =>>   https://gith
 
 # ------------------------------------------------------------------------------
 
-# 2. Notendur (20%) 07/12/2023 Ég skrifaði handrit í Powershell, ég notaði tenglana sem kennarinn lagði til um nákvæmlega
+# 2. Notendur (20%) 07/12/2023 Ég skrifaði handrit í Powershell, ég notaði tenglana frá lið 2 og internetið eins og:
 https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-csv?view=powershell-7.4&viewFallbackFrom=powershell-7 og
 https://github.com/gestskoli/KEST2VW/blob/master/PowerShell/UmPowerShell.md#lesa-%C3%BAr-csv-skr%C3%A1
 
