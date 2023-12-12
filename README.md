@@ -25,6 +25,14 @@ Hlekkur á lýsingu á öllu lið 3 =>> https://github.com/SkiL3K/Verkefni-7-Lok
 
 Hlekkur á lýsingu á öllu lið 4 =>> https://github.com/SkiL3K/Verkefni-7-Lokaverkefni/blob/main/4.%20%C3%96ryggism%C3%A1l%20(10%25)
 
+- Lágmarkslengd lykilorða verður 8 stafir.
+- Einföld lykilorð eru ekki heimil.
+- Lokað fyrir alla innkomandi netumferð nema ping.
+  
+![lid4](https://github.com/SkiL3K/Verkefni-7-Lokaverkefni/assets/114151905/12407a12-0521-4871-9d82-056d163cf9ae)
+
+![lid4 2](https://github.com/SkiL3K/Verkefni-7-Lokaverkefni/assets/114151905/f6b3879e-29b4-41e4-8d80-6ab87d787964)
+
 # ------------------------------------------------------------------------------
 
 þú getur séð allan kóðann sem ég skrifaði hér =>> https://github.com/SkiL3K/Verkefni-7-Lokaverkefni/blob/main/2.%20Notendur%20(20%25)
