@@ -7,3 +7,5 @@ Lokaverkefni
 
 
 <img width="1280" alt="skjaskot2" src="https://github.com/SkiL3K/Verkefni-7-Lokaverkefni/assets/114151905/f637013d-297b-4a27-95ef-4f584b1aa759">
+
+hlaðið niður skránni hér =>>  https://github.com/SkiL3K/Verkefni-7-Lokaverkefni/blob/main/Lokaverkefni_V20SebastianLukaszLis.pka
