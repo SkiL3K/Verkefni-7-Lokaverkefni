@@ -1,41 +1,37 @@
-Búið til notendahópana (e. user group) Innkaup, Sala, Yfirstjórn og Allir. Allir starfsmenn eiga að vera í einum deildarhóp og síðan í Allir hópnum. -
+# Lesa notendur úr CSV-skjali
+$notendur = Import-Csv -Path "notendur.csv"
 
-# Stígur að CSV skránni
-$csvPath = $csvPath = "C:\Users\Kocham Cycuszki\Desktop\New folder\users\user_data.csv"
+# Búa til notendahópa
+$hoper = "Innkaup", "Sala", "Yfirstjórn", "Allir"
 
-# Lesa gögn úr CSV skrá
-$userData = Import-Csv -Path $csvPath
-
-# Búa til hópa ef þeir eru ekki til
-$groups = "Innkaup", "Sala", "Yfirstjórn", "Allir"
-
-foreach ($group in $groups) {
-    if (-not (Get-LocalGroup -Name $group -ErrorAction SilentlyContinue)) {
-        New-LocalGroup -Name $group
-    }
+foreach ($hopur in $hoper) {
+    New-LocalGroup -Name $hopur
 }
 
-# Loopa í gegnum gögnin og búa til notendur
-foreach ($user in $userData) {
-    $username = $user.Username
-    $password = ConvertTo-SecureString -String $user.Password -AsPlainText -Force
-    $userFullName = $user.FullName
-
+# Fara í gegnum hvern notanda og búa til aðgangsorð
+foreach ($notandi in $notendur) {
     # Búa til notanda
-    New-LocalUser -Name $username -Password $password -FullName $userFullName -Description "New user account" -PasswordNeverExpires $true
+    $notandiGogn = @{
+        "Name"             = $notandi.notendanafn
+        "GivenName"        = $notandi.fornafn
+        "Surname"          = $notandi.eftirnafn
+        "SamAccountName"   = $notandi.notendanafn
+        "UserPrincipalName" = "$($notandi.notendanafn)@example.com" # Breyta léninu eftir þörfum
+        "Enabled"          = $true
+    }
+    $nyrNotandi = New-LocalUser @notandiGogn
 
-    # Setja notanda í hópa
-    Add-LocalGroupMember -Group "Innkaup" -Member $username
-    Add-LocalGroupMember -Group "Sala" -Member $username
-    Add-LocalGroupMember -Group "Yfirstjórn" -Member $username
-    Add-LocalGroupMember -Group "Allir" -Member $username
+    # Setja aðgangsorð á notanda
+    $lykilord = ConvertTo-SecureString -String "OryggiLykilord123!" -AsPlainText -Force
+    $nyrNotandi | Set-LocalUser -Password $lykilord
+
+    # Bæta notanda í sinn hóp
+    Add-LocalGroupMember -Group $notandi.hopur -Member $notandi.notendanafn
 }
 
-# Stilla réttindi til að leyfa notendum að skrá sig inn
-$groupAll = "Allir"
-$allUsers = Get-LocalUser
+# Bæta öllum notendum í "Allir" hópinn
+$allirNotendur = $notendur.notendanafn
+Add-LocalGroupMember -Group "Allir" -Member $allirNotendur
 
-foreach ($user in $allUsers) {
-    Add-LocalGroupMember -Group $groupAll -Member $user.Name
-}
-
+# Sýna upplýsingar
+$notendur
