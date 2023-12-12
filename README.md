@@ -8,7 +8,7 @@
 # ------------------------------------------------------------------------------
 
 # 2. Notendur (20%) Ég skrifaði handrit í Powershell, ég notaði tenglana sem kennarinn lagði til um nákvæmlega
-https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-csv?view=powershell-7.4&viewFallbackFrom=powershell-7
+https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-csv?view=powershell-7.4&viewFallbackFrom=powershell-7 og
 https://github.com/gestskoli/KEST2VW/blob/master/PowerShell/UmPowerShell.md#lesa-%C3%BAr-csv-skr%C3%A1
 # þú getur séð allan kóðann sem ég skrifaði hér =>> https://github.com/SkiL3K/Verkefni-7-Lokaverkefni/blob/main/2.%20Notendur%20(20%25)
 
