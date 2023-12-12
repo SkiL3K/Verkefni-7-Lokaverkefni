@@ -2,7 +2,7 @@
 Búið svo möppurnar fyrir hópana til í möppunni Gögn og stillið svo réttindin á möppunum. Búið til textaskrá í hverri möppu sem heitir eftir nafninu á möppunni. *****
 
 # Búa til möppu Gögn á rót C-drifsins
-$rootPath = "C:\Gögn"
+$rootPath = "C:\Users\KEST2VW-SebastianLukasz\Gögn"
 New-Item -Path $rootPath -ItemType Directory
 
 # Búa til möppur fyrir hópana í Gögn
