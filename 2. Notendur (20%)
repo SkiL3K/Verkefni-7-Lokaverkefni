@@ -11,7 +11,7 @@ Guðmundur Óskar Bjarnason,Guðmundur,Bjarnason,GudBja,Sala
 Per Stephansen,Per,Stephansen,PerSte,Sala
 
 # Lesa notendur úr CSV-skjali
-$notendur = Import-Csv -Path "notendur.csv"
+$notendur = Import-Csv -Path "C:\Users\KEST2VW-SebastianLukasz\notendur.csv"
 
 # Búa til notendahópa
 $hoper = "Innkaup", "Sala", "Yfirstjórn", "Allir"
