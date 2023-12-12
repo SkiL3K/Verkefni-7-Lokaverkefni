@@ -1,17 +1,17 @@
 ***** Breyttu lykilorðareglunni þannnig að: Lágmarkslengd lykilorða verður 8 stafir. Einföld lykilorð eru ekki heimil. ****
 
-# Setja lágmarkslengd lykilorða á 8 stafi
-$minLength = 8
-Set-LocalUser -Name * -PasswordMinimumLength $minLength
+# Breyta lykilorðareglunni
+$minPasswordLength = 8
+$complexityEnabled = $true
+$registryPath = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"
+$registryName = "MinimumPasswordLength"
+$complexityRegistry = "PasswordComplexity"
 
-# Sleppa einföldum lykilorðum
-Set-LocalUser -Name * -PasswordComplexity Enabled
+Set-ItemProperty -Path $registryPath -Name $registryName -Value $minPasswordLength
+Set-ItemProperty -Path $registryPath -Name $complexityRegistry -Value $complexityEnabled
 
-**** Eldveggur: Lokað fyrir alla innkomandi netumferð nema ping. *****
+# Setja upp eldvegg sem lokar fyrir alla innkomandi netumferð nema ping
+New-NetFirewallRule -DisplayName "Loka öllum innkomandi umferð nema ping" -Direction Inbound -Action Block -RemoteAddress Any -LocalPort Any -Protocol ICMPv4 -IcmpType 8 -Enabled True
 
-# Búa til reglu sem leyfir ping
-$ruleName = "AllowPing"
-$rule = New-NetFirewallRule -DisplayName $ruleName -Direction Inbound -Protocol ICMPv4 -Action Allow -Enabled True
+Write-Host "Lykilorðaregla og eldveggur hafa verið uppfærðir."
 
-# Setja reglu á eldvegginn
-Set-NetFirewallRule -DisplayName $ruleName -Profile Any -RemoteAddress Any -LocalAddress Any
